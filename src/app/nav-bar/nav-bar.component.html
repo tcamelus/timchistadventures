@@ -1,0 +1,41 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+      #drawer 
+      class="sidenav"
+      [ngClass]="{hidden: !(isHandset$ | async)}" 
+      fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/about" routerLinkActive="active">About_Us</a>
+      <a mat-list-item routerLink="/adventures" routerLinkActive="active">Adventures</a>
+      <a mat-list-item routerLink="/destinations" routerLinkActive="active">Destinations</a>
+      <a mat-list-item routerLink="/car-hire" routerLinkActive="active">Car_Hire</a>
+      <a mat-list-item routerLink="/accomodations" routerLinkActive="active">Accomodations</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <img [ngClass]="{hidden: (isHandset$ | async)}" src="../../assets/img/logo.png"/>
+      <span class="spacer">TimChist Adventures</span>
+      <menu-main [ngClass]="{hidden: (isHandset$ | async)}">
+        <a routerLink="about" routerLinkActive="active">About_Us</a>
+        <a routerLink="adventures" routerLinkActive="active">Adventures</a>
+        <a routerLink="destinations" routerLinkActive="active">Destinations</a>
+        <a routerLink="car-hire" routerLinkActive="active">Car_Hire</a>
+        <a routerLink="accomodations" routerLinkActive="active">Accomodations</a>
+      </menu-main>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

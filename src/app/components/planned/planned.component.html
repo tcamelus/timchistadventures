@@ -1,0 +1,21 @@
+<article>
+    <table border="1px">
+        <tr>
+          <th>Destination</th>
+          <th>Attraction</th>
+          <th>Services</th>
+        </tr>
+        <tr *ngFor="let service of bkservices">
+          <td [attr.rowspan]="service.destinationSpan" *ngIf="service.destinationSpan" rowspan="3">{{ service.destination }}</td>
+          <td [attr.rowspan]="service.attractionSpan" *ngIf="service.attractionSpan" rowspan="3">{{ service.attraction }}</td>
+          <td [attr.id]="service.name">{{ service.name }}</td>
+          <td>{{ service.rate }}</td>
+          <td><button (click)="deleteRow(service)">Remove</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="3"><button>Book Trip</button></td>
+        </tr>
+    </table>
+</article>
+

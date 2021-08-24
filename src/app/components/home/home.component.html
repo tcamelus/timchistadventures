@@ -1,0 +1,88 @@
+
+<article>
+    <div>
+        <div class="welcome">
+            <H1>Welcome to TimChist Adventures</H1>
+            <p class="mt-3" >
+                TimChist Adventures is a privately owned tourism business registered in 
+                Kenya in 2017. <br/>At TimChist we make travel easy and tours memorable.
+            </p>
+        </div>
+        <div >
+            <p class="mt-3">
+                We not only offer planned tour experiences, we also allow you to customize
+                your own travel by exposing and informing you about different travel experiences
+                and services being offered in different destinations around the country.<br/>
+                Our service offers include:
+            </p>
+        </div>
+        <div>
+            <div class="serviceItems">
+                <ul ngbNav #nav="ngbNav" class="nav-tabs">
+                    <li ngbNavItem>
+                        <a ngbNavLink>Personalized Experiences</a>
+                        <ng-template ngbNavContent height="50%">
+                            <img height="25%" width="25%" src="../../../assets/img/logo.png" alt="">
+                            <p>
+                                Kenya has a broad-range of destinations with different tour 
+                                experiences and activities. We know of quite the number and 
+                                want you to experience Kenya in your own terms, budget, and
+                                preference. Ours is to make touring and traveling around Kenya 
+                                easy for both individuals and businesses alike. Find yourself a 
+                                <button routerLink="destinations">Destinations</button> and proceed with planning your trip. 
+                            </p>
+                        </ng-template>
+                    </li>
+                    <li ngbNavItem>
+                        <a ngbNavLink>Events/Conferences</a>
+                        <ng-template ngbNavContent>
+                            <img height="25%" width="25%" src="../../../assets/img/logo.png" alt="">
+                            <p>
+                                One of the growing businesses in Kenya today is events and 
+                                conferencing where business people, activists, and planners 
+                                meet not only in the main city of Nairobi but in other 
+                                destinations around the country. We provide events and 
+                                conferencing solutions, accommodations, transport and just
+                                being there incase you want to be show around and experience 
+                                your destination beyond the event or conference. 
+                                <button>View Upcoming Events</button> or <button>Plan Your Event</button>
+                            </p>
+                        </ng-template>
+                    </li>
+                    <li ngbNavItem>
+                        <a ngbNavLink>Adventures/Safaris</a>
+                        <ng-template ngbNavContent>
+                            <img height="25%" width="25%" src="../../../assets/img/logo.png" alt="">
+                            <p>
+                                We have uniquely 
+                                experienced this country and catalogued our experiences so 
+                                that you can also get to experience this country and its 
+                                uniqueness. Visit the Mara and see the 
+                                wildebeest migrate to and from Kenya, let us take you to the coast 
+                                or to the lake and experiences the sandy beaches and cool 
+                                breeze, or visit the Kenya deserts and have a desert tour right in 
+                                your country. There is literally an experience in Kenya for every 
+                                person and we know and have planned a significant number for you 
+                                to experience. Visit our <button routerLink="destinations">Adventures Cataloge</button> and choose and experience you 
+                                may desire.
+                            </p>
+                        </ng-template>
+                        </li>
+                        <li ngbNavItem>
+                        <a ngbNavLink>Car Hire</a>
+                        <ng-template ngbNavContent>Second content
+    
+                        </ng-template>
+                        </li>
+                        <li ngbNavItem>
+                        <a ngbNavLink>Book Flights</a>
+                        <ng-template ngbNavContent>Second content
+    
+                        </ng-template>
+                        </li>
+                    </ul>
+                    <div [ngbNavOutlet]="nav"></div>
+            </div>
+        </div>
+    </div>
+</article>

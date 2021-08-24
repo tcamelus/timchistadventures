@@ -1,0 +1,18 @@
+.welcome{
+    display: block;
+    width: 100%;
+    height: max-content;
+    border-radius: 20px;
+    float: unset;
+    margin: 10 10;
+    text-align: center;
+    text-justify: newspaper;
+    justify-content: center;
+    justify-items: center;
+    text-justify: newspaper;
+}
+.welcome h2{
+    font-family: "sweet-purple", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2em;
+    color:tomato;
+}
