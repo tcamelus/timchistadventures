@@ -1,11 +1,16 @@
 <?php
+//
+//manage cores to allow sharing
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: PUT, GET, POST, DELETE');
+header('Access-Control-Allow-Headers: *');
 class dbase extends \PDO {
 
     //
     //The properties of this class are:-
-    public $username = "root";
-    public $password = "";
-    public $dbname= "tim_adventures";
+    public $username = "timchis2";
+    public $password = "Akmakm123.";
+    public $dbname= "timchis2_adventures";
 
     //The tables of this database 
     public $tables;
@@ -14,7 +19,7 @@ class dbase extends \PDO {
     public function __construct() {
         //
         //Set the dsn.
-        $dsn = "mysql:host=localhost;dbname=$this->dbname";
+        $dsn = "mysql:host=timchistadventures.co.ke;dbname=$this->dbname";
         //
         //Parent constructor take a data source name.
         parent::__construct($dsn, $this->username, $this->password);
@@ -51,7 +56,7 @@ class dbase extends \PDO {
 
     //
     //Returns a result from a sql stmt.
-    public function query($sql) {
+    public function query ($sql) {
         //
         try {
             $result = parent::query($sql);
