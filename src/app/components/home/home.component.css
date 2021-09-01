@@ -31,7 +31,7 @@ article{
 }
 .welcome p{
     margin-top: 30px;
-    color: navy;
+    color: white;
 }
 
  
@@ -60,4 +60,35 @@ article{
 
 .vl{
     border-right: 3px solid green;
+}
+
+img{
+    width: 100%;
+    height: 80%;
+    opacity: 0.8;
+    z-index: 2;
+
+}
+
+.carousel-caption{
+    background: rgba(0,0,0,0.7);
+    top: 50%;
+transform: translateY(-50%);
+    z-index: 1;
+    bottom: initial;
+}
+
+.item{
+    -webkit-transform-style: preserve-3d;
+-moz-transform-style: preserve-3d;
+transform-style: preserve-3d;
+font-size: 1.3em;
+}
+
+h3{
+    font-size: 2em;
+}
+.btn{
+    font-size: 1.4em;
+    color:bisque;
 }

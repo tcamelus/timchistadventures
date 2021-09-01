@@ -1,55 +1,163 @@
 
 <article>
-        <div class="welcome">
+        <!-- <div class="welcome">
             <img height="35%" width="35%" src="../../../assets/img/logo.png" alt="">
             <h2>Your Preferred Local Travel Partner</h2>
-        </div>
+        </div> -->
         <div>
             <div class="serviceItems">
                 <ul ngbNav #nav="ngbNav" class="nav-tabs">
                     <li ngbNavItem>
                         <a ngbNavLink>Who We Are</a>
                         <ng-template ngbNavContent height="50%">
-                            <img height="25%" width="25%" src="../../../assets/img/logo.png" alt="">
-                            <p>
-                                Add text
-                            </p>
+                            <!-- Our Mission -->
+                           <div class="row ">
+                            <div style="width: 100%;">
+                                <div style="width: 50%; height: 100px; float: left; background: green;"> 
+                                    Left Div 
+                                </div>
+                                <div style="margin-left: 50%; height: 100px; background: blue;"> 
+                                    Right Div
+                                </div>
+                            </div>
+                           </div>
+
+                           <!-- Our Vision -->
+                           <div class="row section">
+                            <div style="width: 100%;">
+                                <div style="width: 50%; height: 100px; float: left; background: green;"> 
+                                    Left Div 
+                                </div>
+                                <div style="margin-left: 50%; height: 100px; background: blue;"> 
+                                    Right Div
+                                </div>
+                            </div>
+                           </div>
+
+
+                           <!-- Our Values -->
+                           <div class="row section">
+                            <div style="width: 100%;">
+                                <div style="width: 50%; height: 100px; float: left; background: green;"> 
+                                    Left Div 
+                                </div>
+                                <div style="margin-left: 50%; height: 100px; background: blue;"> 
+                                    Right Div
+                                </div>
+                            </div>
+                           </div>
+
+                           <!-- Our Goals-->
+                           <div class="row section">
+                            <div style="width: 100%;">
+                                <div style="width: 50%; height: 100px; float: left; background: green;"> 
+                                    Left Div 
+                                </div>
+                                <div style="margin-left: 50%; height: 100px; background: blue;"> 
+                                    Right Div
+                                </div>
+                            </div>
+                           </div>
                         </ng-template>
                     </li>
                     <li ngbNavItem>
                         <a ngbNavLink>What We Do</a>
                         <ng-template ngbNavContent>
-                            <img height="25%" width="25%" src="../../../assets/img/logo.png" alt="">
-                            <p>
-                                Add Text
-                            </p>
+                            
+                            <div class="services">
+                                <h1 class = "justify-content-center d-flex"> Our Services </h1>
+                                <div class="row">
+                            
+                                    <div class="col-md-4  ">
+                                      <h3> Personalized Experiences </h3>
+                                     
+                                      <p>
+                                        Kenya has a broad-range of destinations with different tour 
+                                        experiences and activities. We know of quite the number and 
+                                        want you to experience Kenya in your own terms, budget, and
+                                        preference. Ours is to make touring and traveling around Kenya 
+                                        easy for both individuals and businesses alike. Find yourself a 
+                                        <button routerLink="destinations">Destinations</button> and proceed with planning your trip. 
+                                    </p>
+                                    </div>
+                            
+                                  <div class="col-md-4  ">
+                                    <h3> Events/Conferences </h3>
+                            
+                                    <p>
+                                      One of the growing businesses in Kenya today is events and 
+                                      conferencing where business people, activists, and planners 
+                                      meet not only in the main city of Nairobi but in other 
+                                      destinations around the country. We provide events and 
+                                      conferencing solutions, accommodations, transport and just
+                                      being there incase you want to be show around and experience 
+                                      your destination beyond the event or conference. 
+                                      <button>View Upcoming Events</button> or <button>Plan Your Event</button>
+                                  </p>
+                                  </div>
+                            
+                                  <div class="col-md-4">
+                                    <h3> Adventures/Safaris </h3>
+                            
+                                    <p>
+                                      We have uniquely 
+                                      experienced this country and catalogued our experiences so 
+                                      that you can also get to experience this country and its 
+                                      uniqueness. Visit the Mara and see the 
+                                      wildebeest migrate to and from Kenya, let us take you to the coast 
+                                      or to the lake and experiences the sandy beaches and cool 
+                                      breeze, or visit the Kenya deserts and have a desert tour right in 
+                                      your country. There is literally an experience in Kenya for every 
+                                      person and we know and have planned a significant number for you 
+                                      to experience. Visit our <button routerLink="destinations">Adventures Cataloge</button> and choose and experience you 
+                                      may desire.
+                                  </p>
+                                  </div>
+                                      
+                                </div>
+                              
+                                <div class="row row-content">
+                                  <div class="col-md-4  ">
+                                    <h3> Car Hire </h3>
+                            
+                            
+                                    <p>
+                                      We have uniquely 
+                                      experienced this country and catalogued our experiences so 
+                                      that you can also get to experience this country and its 
+                                      uniqueness. Visit the Mara and see the 
+                                      wildebeest migrate to and from Kenya, let us take you to the coast 
+                                      or to the lake and experiences the sandy beaches and cool 
+                                      breeze, or visit the Kenya deserts and have a desert tour right in 
+                                      your country. There is literally an experience in Kenya for every 
+                                      person and we know and have planned a significant number for you 
+                                      to experience. Visit our <button routerLink="destinations">Adventures Cataloge</button> and choose and experience you 
+                                      may desire.
+                                  </p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <h3> Book Flights </h3>
+                            
+                            
+                                    <p>
+                                      We have uniquely 
+                                      experienced this country and catalogued our experiences so 
+                                      that you can also get to experience this country and its 
+                                      uniqueness. Visit the Mara and see the 
+                                      wildebeest migrate to and from Kenya, let us take you to the coast 
+                                      or to the lake and experiences the sandy beaches and cool 
+                                      breeze, or visit the Kenya deserts and have a desert tour right in 
+                                      your country. There is literally an experience in Kenya for every 
+                                      person and we know and have planned a significant number for you 
+                                      to experience. Visit our <button routerLink="destinations">Adventures Cataloge</button> and choose and experience you 
+                                      may desire.
+                                  </p>
+                                  </div>
+                                </div>
+                              </div>
                         </ng-template>
                     </li>
-                    <li ngbNavItem>
-                        <a ngbNavLink>Our Mission</a>
-                        <ng-template ngbNavContent>
-                            <img height="25%" width="25%" src="../../../assets/img/logo.png" alt="">
-                            <p>
-                               Add Text
-                            </p>
-                        </ng-template>
-                        </li>
-                        <li ngbNavItem>
-                        <a ngbNavLink>Our Vision</a>
-                        <ng-template ngbNavContent>
-                            <p>
-                                Add Text
-                            </p>
-                        </ng-template>
-                        </li>
-                        <li ngbNavItem>
-                        <a ngbNavLink>Our Values</a>
-                        <ng-template ngbNavContent>
-                            <p>
-                                Add Text
-                            </p>
-                        </ng-template>
-                        </li>
+
                         <li ngbNavItem>
                             <a ngbNavLink>Contact Us</a>
                             <ng-template ngbNavContent>

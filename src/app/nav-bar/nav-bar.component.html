@@ -26,7 +26,8 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <img [ngClass]="{hidden: (isHandset$ | async)}" src="../../assets/img/logo.png"/>
+      <img [ngClass]="{hidden: (isHandset$ | async)}" routerLink="/" src="../../assets/img/logo.png"/> 
+   
       <span class="spacer" [ngClass]="{hidden: !(isHandset$ | async)}">TimChist Adventures</span>
       <span class="spacer" > </span>
 
