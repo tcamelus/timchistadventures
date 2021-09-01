@@ -26,6 +26,8 @@ import { PromosComponent } from './components/promos/promos.component';
 import { ServicesComponent } from './components/services/services.component';
 import { PlannedComponent } from './components/planned/planned.component';
 import { PlanningService } from './data.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { PlanningService } from './data.service';
     HttpClientModule,
     NgbModule,
     FlexLayoutModule,
-    AvatarModule
+    AvatarModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [PlanningService],
   bootstrap: [AppComponent]

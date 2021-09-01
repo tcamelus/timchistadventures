@@ -1,13 +1,54 @@
 <?php
 //
+//
+// Allow from any origin
+if(isset($_SERVER["HTTP_ORIGIN"]))
+{
+    // You can decide if the origin in $_SERVER['HTTP_ORIGIN'] 
+    //is something you want to allow, or as we do here, just allow all
+    header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+}
+else
+{
+    //No HTTP_ORIGIN set, so we allow any. You can disallow if needed here
+    header("Access-Control-Allow-Origin: *");
+}
+
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Max-Age: 1000");    // cache for 10 minutes
+
+if($_SERVER["REQUEST_METHOD"] == "OPTIONS")
+{
+    //Allow supported requests
+    if (isset($_SERVER["HTTP_ACCESS_CONTROL_REQUEST_METHOD"]))
+        header("Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT"); 
+
+    if (isset($_SERVER["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]))
+        header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+
+    //Just exit with 200 OK with the above headers for OPTIONS method
+    exit(0);
+}
+//From here, handle the request as it is ok
+//
 //manage cores to allow sharing
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE");
-header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+// header('@CrossOrigin(origins="*", allowedHeaders = "*")');
+// header('Access-Control-Allow-Origin: *');
+// header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE");
+// header("Access-Control-Allow-Headers: *");
+//
+//
+header('Access-Control-Allow-Origin: *'); 
+header("Access-Control-Allow-Credentials: true");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Max-Age: 1000');
+header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
+
+//
 //get the class for dbase connection
 require_once "classes.php";
 //
-//class test tests whether we have a connection
+//class timAdventures manages the planning component of the program
 class timAdventures extends dbase{
     //
     //Get the destination primary key from the destination data retrieved 
@@ -238,6 +279,7 @@ class timAdventures extends dbase{
     }
 }
 //
+//establish a new instance of timAdventures
 $timAdventures =new timAdventures();
 // 
 //Get the method to execute 

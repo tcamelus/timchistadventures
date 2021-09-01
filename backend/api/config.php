@@ -5,10 +5,10 @@ header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 //
 //Define the connection
-define('HOST', 'localhost');
-define('USER', 'root');
-define('PASSWORD', '');
-define('DataBase', 'tim_adventures');
+define('HOST', 'timchistadventures.co.ke');
+define('USER', 'timchis2');
+define('PASSWORD', 'Akmakm123.');
+define('DataBase', 'timchis2_adventures');
 //
 //Create connection to dbase and test success or failure
 function connect()

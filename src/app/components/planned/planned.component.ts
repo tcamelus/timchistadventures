@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlanningService } from 'src/app/data.service';
+import {NgbDate, NgbCalendar, NgbDateParserFormatter} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-planned',
@@ -7,6 +8,12 @@ import { PlanningService } from 'src/app/data.service';
   styleUrls: ['./planned.component.css']
 })
 export class PlannedComponent implements OnInit {
+  //
+  //Date picker variables
+  hoveredDate: NgbDate | null = null;
+
+  fromDate: NgbDate | null;
+  toDate: NgbDate | null;
   //
   //get the plans and store in the plandetails.
   planDetails=this.plans.getService();
@@ -16,10 +23,14 @@ export class PlannedComponent implements OnInit {
   //
   //
   service: any;
+  //
+  //
+  plannedServices: any = [];
 
 
-  constructor(private plans: PlanningService) {
-    
+  constructor(private plans: PlanningService, private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
+    this.fromDate = calendar.getToday();
+    this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
    }
 
   ngOnInit(): void {
@@ -27,7 +38,6 @@ export class PlannedComponent implements OnInit {
   }
   //process incoming data and group based on destination and attraction
   private processData() {
-    console.log(this.planDetails);
     const destinationsSeen: Record<any, any> = {};
     const attractionsSeen: Record<any, any> = {};
 
@@ -53,8 +63,56 @@ export class PlannedComponent implements OnInit {
   //delete a service from the plan
   deleteRow(service: any){
     alert("Deleting");
-    console.log(service);
     const index = this.bkservices.indexOf(service);
     this.bkservices.splice(index, 1);
-}
+  }
+  //
+  bookTrip(evt: Event){
+    const el= <HTMLButtonElement>evt.target;
+    if (el===null){
+      throw new Error("element not found");
+    }
+    //
+    //Get the tr parent 
+    const tr =<HTMLTableRowElement>el.parentElement?.parentElement;
+    //
+    //Get the info you are looking for 
+    const date = tr.cells[0].textContent;
+    console.log(date);
+    //
+    //Get the tr above 
+    const tr_above= <HTMLTableRowElement>(<HTMLTableSectionElement>tr.parentElement!).rows[tr.rowIndex-1]
+    //this.plannedServices = this.bkservices.push(this.fromDate, this.toDate);
+    // console.log(this.plannedServices);
+  }
+  onDateSelection(date: NgbDate) {
+    if (!this.fromDate && !this.toDate) {
+      this.fromDate = date;
+    } else if (this.fromDate && !this.toDate && date && date.after(this.fromDate)) {
+      this.toDate = date;
+    } else {
+      this.toDate = null;
+      this.fromDate = date;
+    }
+  }
+
+  isHovered(date: NgbDate) {
+    return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && 
+    date.before(this.hoveredDate);
+  }
+
+  isInside(date: NgbDate) {
+    return this.toDate && date.after(this.fromDate) && date.before(this.toDate);
+  }
+
+  isRange(date: NgbDate) {
+    return date.equals(this.fromDate) || (this.toDate && date.equals(this.toDate)) || 
+    this.isInside(date) || this.isHovered(date);
+  }
+
+  validateInput(currentValue: NgbDate | null, input: string): NgbDate | null {
+    const parsed = this.formatter.parse(input);
+    return parsed && this.calendar.isValid(NgbDate.from(parsed)) ? 
+    NgbDate.from(parsed) : currentValue;
+  }
 }
