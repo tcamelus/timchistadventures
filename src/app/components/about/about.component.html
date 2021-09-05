@@ -1,173 +1,209 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 
-<article>
-        <!-- <div class="welcome">
-            <img height="35%" width="35%" src="../../../assets/img/logo.png" alt="">
-            <h2>Your Preferred Local Travel Partner</h2>
-        </div> -->
-        <div>
-            <div class="serviceItems">
-                <ul ngbNav #nav="ngbNav" class="nav-tabs">
-                    <li ngbNavItem>
-                        <a ngbNavLink>Who We Are</a>
-                        <ng-template ngbNavContent height="50%">
-                            <!-- Our Mission -->
-                           <div class="row ">
-                            <div style="width: 100%;">
-                                <div style="width: 50%; height: 100px; float: left; background: green;"> 
-                                    Left Div 
-                                </div>
-                                <div style="margin-left: 50%; height: 100px; background: blue;"> 
-                                    Right Div
-                                </div>
-                            </div>
-                           </div>
-
-                           <!-- Our Vision -->
-                           <div class="row section">
-                            <div style="width: 100%;">
-                                <div style="width: 50%; height: 100px; float: left; background: green;"> 
-                                    Left Div 
-                                </div>
-                                <div style="margin-left: 50%; height: 100px; background: blue;"> 
-                                    Right Div
-                                </div>
-                            </div>
-                           </div>
-
-
-                           <!-- Our Values -->
-                           <div class="row section">
-                            <div style="width: 100%;">
-                                <div style="width: 50%; height: 100px; float: left; background: green;"> 
-                                    Left Div 
-                                </div>
-                                <div style="margin-left: 50%; height: 100px; background: blue;"> 
-                                    Right Div
-                                </div>
-                            </div>
-                           </div>
-
-                           <!-- Our Goals-->
-                           <div class="row section">
-                            <div style="width: 100%;">
-                                <div style="width: 50%; height: 100px; float: left; background: green;"> 
-                                    Left Div 
-                                </div>
-                                <div style="margin-left: 50%; height: 100px; background: blue;"> 
-                                    Right Div
-                                </div>
-                            </div>
-                           </div>
-                        </ng-template>
-                    </li>
-                    <li ngbNavItem>
-                        <a ngbNavLink>What We Do</a>
-                        <ng-template ngbNavContent>
-                            
-                            <div class="services">
-                                <h1 class = "justify-content-center d-flex"> Our Services </h1>
-                                <div class="row">
-                            
-                                    <div class="col-md-4  ">
-                                      <h3> Personalized Experiences </h3>
-                                     
-                                      <p>
-                                        Kenya has a broad-range of destinations with different tour 
-                                        experiences and activities. We know of quite the number and 
-                                        want you to experience Kenya in your own terms, budget, and
-                                        preference. Ours is to make touring and traveling around Kenya 
-                                        easy for both individuals and businesses alike. Find yourself a 
-                                        <button routerLink="destinations">Destinations</button> and proceed with planning your trip. 
-                                    </p>
-                                    </div>
-                            
-                                  <div class="col-md-4  ">
-                                    <h3> Events/Conferences </h3>
-                            
-                                    <p>
-                                      One of the growing businesses in Kenya today is events and 
-                                      conferencing where business people, activists, and planners 
-                                      meet not only in the main city of Nairobi but in other 
-                                      destinations around the country. We provide events and 
-                                      conferencing solutions, accommodations, transport and just
-                                      being there incase you want to be show around and experience 
-                                      your destination beyond the event or conference. 
-                                      <button>View Upcoming Events</button> or <button>Plan Your Event</button>
-                                  </p>
-                                  </div>
-                            
-                                  <div class="col-md-4">
-                                    <h3> Adventures/Safaris </h3>
-                            
-                                    <p>
-                                      We have uniquely 
-                                      experienced this country and catalogued our experiences so 
-                                      that you can also get to experience this country and its 
-                                      uniqueness. Visit the Mara and see the 
-                                      wildebeest migrate to and from Kenya, let us take you to the coast 
-                                      or to the lake and experiences the sandy beaches and cool 
-                                      breeze, or visit the Kenya deserts and have a desert tour right in 
-                                      your country. There is literally an experience in Kenya for every 
-                                      person and we know and have planned a significant number for you 
-                                      to experience. Visit our <button routerLink="destinations">Adventures Cataloge</button> and choose and experience you 
-                                      may desire.
-                                  </p>
-                                  </div>
-                                      
-                                </div>
-                              
-                                <div class="row row-content">
-                                  <div class="col-md-4  ">
-                                    <h3> Car Hire </h3>
-                            
-                            
-                                    <p>
-                                      We have uniquely 
-                                      experienced this country and catalogued our experiences so 
-                                      that you can also get to experience this country and its 
-                                      uniqueness. Visit the Mara and see the 
-                                      wildebeest migrate to and from Kenya, let us take you to the coast 
-                                      or to the lake and experiences the sandy beaches and cool 
-                                      breeze, or visit the Kenya deserts and have a desert tour right in 
-                                      your country. There is literally an experience in Kenya for every 
-                                      person and we know and have planned a significant number for you 
-                                      to experience. Visit our <button routerLink="destinations">Adventures Cataloge</button> and choose and experience you 
-                                      may desire.
-                                  </p>
-                                  </div>
-                                  <div class="col-md-4">
-                                    <h3> Book Flights </h3>
-                            
-                            
-                                    <p>
-                                      We have uniquely 
-                                      experienced this country and catalogued our experiences so 
-                                      that you can also get to experience this country and its 
-                                      uniqueness. Visit the Mara and see the 
-                                      wildebeest migrate to and from Kenya, let us take you to the coast 
-                                      or to the lake and experiences the sandy beaches and cool 
-                                      breeze, or visit the Kenya deserts and have a desert tour right in 
-                                      your country. There is literally an experience in Kenya for every 
-                                      person and we know and have planned a significant number for you 
-                                      to experience. Visit our <button routerLink="destinations">Adventures Cataloge</button> and choose and experience you 
-                                      may desire.
-                                  </p>
-                                  </div>
-                                </div>
-                              </div>
-                        </ng-template>
-                    </li>
-
-                        <li ngbNavItem>
-                            <a ngbNavLink>Contact Us</a>
-                            <ng-template ngbNavContent>
-                                <p>
-                                    Add Text
-                                </p>
-                            </ng-template>
-                        </li>
-                    </ul>
-                    <div [ngbNavOutlet]="nav"></div>
+<div>
+  <ul class="nav nav-tabs">
+    <li class="active settingshead"><a href="#first" data-toggle="tab">Who We are</a></li>
+    <li class="settingshead"><a href="#second" data-toggle="tab">What We Do</a></li>
+    <li class="settingshead"><a href="#third" data-toggle="tab">Contac us</a></li>
+  </ul>
+</div>
+<div class="tab-content">
+  <div class="tab-pane active" id="first">
+      <div class="namedesig">
+        <div class="row ">
+            <div style="width: 100%;" >
+                <div class="col-md-12">
+                    <div style="float: left; width: 100%; height: 50%" class='col-md-3' > 
+                        <img src="../../../assets/img/mission.jpg" alt= "Our Mission">
+                      </div>
+                      <div style="float: left;" class='col-md-9'> 
+      
+                          <h2>Our Mission</h2> <hr/>
+                          <p>
+                              Is to always be driven and be passionate  about servicing the travel needs of compa nies and individuals in Kenya through the  commitment, integrity, and dedication of  our competent staff and partners. In pursuit  of enhancing our reputation, we pride our selves in delivering value-added services  with regards to both international and local  travel 
+                          </p>
+                          <br/>
+      
+                          <h2>Our Vision</h2> <hr/>
+                          <p>To be the most sort after travel agency providing services to all sectors of the business  community and individuals.  
+                              To utilize the expertise of highly qualified  staff to address the holistic travelling  requirements for corporate and leisure trav elers
+                          </p>
+                      </div>
+                </div>
+              
             </div>
+           </div>
+
+           <div class="row " style ="margin-top: 3%;">
+            <div style="width: 100%;" >
+                <div class="col-md-12">
+                    <div style="float: left;" class='col-md-9'> 
+
+                        <h2>Our Values</h2> <hr/>
+                        <p>
+                            To apply honesty and transparency in all our  dealings with clients and suppliers alike
+                        </p>
+                        <br/>
+    
+                        <h2>Our Goals</h2> <hr/>
+                        <p>
+                            To be the first choice in addressing the trav elling needs of both corporates and individu als. 
+                        </p>
+                        <p>
+                            To render services quickly and efficiently To provide cost effective packages that are  tailor made to suit the needs of the broad  spectrum of travelers both locally and inter nationally. 
+                        </p>
+                        <p>
+                            Adjust to the changing needs of the tour  business and become a major player in the  industry offering key solutions to emerging  challenges.  
+                        </p>
+                    </div>
+                    <div style="float: right;" class='col-md-3' > 
+                      <img src="../../../assets/img/values1.jpg" style="height: 50%; width: 100%;" alt= "Our Vision">
+                    </div>
+                </div>
+                
+               
+            </div>
+           </div>
+    </div>
+  </div>
+  <div class="tab-pane" id="second">
+    <div class="namedesig">
+        <div class="services">
+            <h1 class = "justify-content-center d-flex"> Our Services </h1>
+            <div class="row">
+        
+                <div class="col-md-4  ">
+                  <h3> Personalized Experiences </h3>
+                 
+                  <p>
+                    Kenya has a broad-range of destinations with different tour 
+                    experiences and activities. We know of quite the number and 
+                    want you to experience Kenya in your own terms, budget, and
+                    preference. Ours is to make touring and traveling around Kenya 
+                    easy for both individuals and businesses alike. Find yourself a 
+                    <button routerLink="destinations">Destinations</button> and proceed with planning your trip. 
+                </p>
+                </div>
+        
+              <div class="col-md-4  ">
+                <h3> Events/Conferences </h3>
+        
+                <p>
+                  One of the growing businesses in Kenya today is events and 
+                  conferencing where business people, activists, and planners 
+                  meet not only in the main city of Nairobi but in other 
+                  destinations around the country. We provide events and 
+                  conferencing solutions, accommodations, transport and just
+                  being there incase you want to be show around and experience 
+                  your destination beyond the event or conference. 
+                  <button>View Upcoming Events</button> or <button>Plan Your Event</button>
+              </p>
+              </div>
+        
+              <div class="col-md-4">
+                <h3> Adventures/Safaris </h3>
+        
+                <p>
+                  We have uniquely 
+                  experienced this country and catalogued our experiences so 
+                  that you can also get to experience this country and its 
+                  uniqueness. Visit the Mara and see the 
+                  wildebeest migrate to and from Kenya, let us take you to the coast 
+                  or to the lake and experiences the sandy beaches and cool 
+                  breeze, or visit the Kenya deserts and have a desert tour right in 
+                  your country. There is literally an experience in Kenya for every 
+                  person and we know and have planned a significant number for you 
+                  to experience. Visit our <button routerLink="destinations">Adventures Cataloge</button> and choose and experience you 
+                  may desire.
+              </p>
+              </div>
+                  
+            </div>
+          
+            <div class="row row-content">
+              <div class="col-md-4  ">
+                <h3> Car Hire </h3>
+        
+        
+                <p>
+                  We have uniquely 
+                  experienced this country and catalogued our experiences so 
+                  that you can also get to experience this country and its 
+                  uniqueness. Visit the Mara and see the 
+                  wildebeest migrate to and from Kenya, let us take you to the coast 
+                  or to the lake and experiences the sandy beaches and cool 
+                  breeze, or visit the Kenya deserts and have a desert tour right in 
+                  your country. There is literally an experience in Kenya for every 
+                  person and we know and have planned a significant number for you 
+                  to experience. Visit our <button routerLink="destinations">Adventures Cataloge</button> and choose and experience you 
+                  may desire.
+              </p>
+              </div>
+              <div class="col-md-4">
+                <h3> Book Flights </h3>
+        
+        
+                <p>
+                  We have uniquely 
+                  experienced this country and catalogued our experiences so 
+                  that you can also get to experience this country and its 
+                  uniqueness. Visit the Mara and see the 
+                  wildebeest migrate to and from Kenya, let us take you to the coast 
+                  or to the lake and experiences the sandy beaches and cool 
+                  breeze, or visit the Kenya deserts and have a desert tour right in 
+                  your country. There is literally an experience in Kenya for every 
+                  person and we know and have planned a significant number for you 
+                  to experience. Visit our <button routerLink="destinations">Adventures Cataloge</button> and choose and experience you 
+                  may desire.
+              </p>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+  <div class="tab-pane" id="third">
+    <div class="namedesig">
+      <div class="card col-md-12 ">
+        <div class="card-title">
+            <img src= "../../../assets/img/contact-us.jpeg" alt = "contact-us"/>
         </div>
-</article>
+          <div class="card-body contact-us-card">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="../../../assets/img/whatsapp.png"  class= "socials" alt="WhatsApp">
+                    
+                </div>
+
+                <div class="col-md-8">WhatsApp</div>
+            </div>
+              <div class="row">
+                  <div class="col-md-2">
+                      <img src="../../../assets/img/facebook.png" class= "socials" alt="Facebook">
+                  </div>
+
+                  <div class="col-md-8">Facebook</div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2">
+                    <img src="../../../assets/img/insta.png"  class= "socials" alt="Instagram">
+                </div>
+
+                <div class="col-md-8">Instagram</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="../../../assets/img/twitter.png" class= "socials" alt="Twitter">
+                </div>
+
+                <div class="col-md-8">Twitter</div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
