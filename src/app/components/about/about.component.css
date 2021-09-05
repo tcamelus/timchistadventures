@@ -21,7 +21,17 @@
     margin-top: 1%;
 }
 .socials{
-    height: 30%;
-    width: 10%;
+    height: 60%;
+    width: 30%;
 }
 
+.tab-content{
+    width: 100%;
+    margin: auto;
+    
+}
+
+
+.card{
+    border: none;
+}
