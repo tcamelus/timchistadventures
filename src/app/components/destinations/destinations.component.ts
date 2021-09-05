@@ -29,7 +29,8 @@ export class DestinationsComponent implements OnInit {
     //
     this.dataService.getdestinations().subscribe((data: toursparams[])=>{
       // 
-      this.destinations=(data)
+      this.destinations=(data);
+      console.log(this.destinations);
     });
   }
   //
