@@ -5,6 +5,10 @@
     src: local("sweet-purple"), url(../../../assets/fonts/QUIGLEYW.TTF) format("truetype");
 }
 
+.carousel{
+    border: none;
+}
+
 article{
     margin-right: 10px;
     margin-left: 10px;
@@ -98,4 +102,10 @@ h3{
 .btn{
     font-size: 1.4em;
     color:bisque;
+}
+
+
+.section2{
+    margin-top: 7%;
+    border: none;
 }
