@@ -12,7 +12,7 @@ export class DataService {
   headers = new HttpHeaders();
   //
   //define the server url
-  private baseUrl = "http://localhost/adventures/backend/api/";
+  private baseUrl = "http://timchistadventures.co.ke/backend/";
   //
   //Define the httpOptions for handling requests
   httpOptions = {
@@ -25,6 +25,7 @@ export class DataService {
   //
   //Return data by invoking the get method of the HttpClient using the baseUrl
   public getdestinations(){
+    console.log("base", this.baseUrl);
     return this.httpClient.get
     (`${this.baseUrl}timadventures.php?class=timAdventures&method=destination`).pipe(
       map((res: any) => {
@@ -36,7 +37,7 @@ export class DataService {
   //baseUrl and incoming variable
   getAttractions(destination?: any ){
     return this.httpClient.get
-    (`${this.baseUrl}timAdventures.php?class=timAdventures&method=attractions&destination="${destination}"`).pipe(
+    (`${this.baseUrl}timadventures.php?class=timAdventures&method=attractions&destination="${destination}"`).pipe(
       map((res: any) => {
         //console.log("Attractions: ", res);
         return res;
@@ -48,7 +49,7 @@ export class DataService {
   getServices(attraction?: any){
     //console.log("Data Service: ", attraction);
     return this.httpClient.get
-    (`${this.baseUrl}timAdventures.php?class=timAdventures&method=services&attraction="${attraction}"`).pipe(
+    (`${this.baseUrl}timadventures.php?class=timAdventures&method=services&attraction="${attraction}"`).pipe(
       map((res: any) => {
         //console.log("servicesdata: ", res);
         return res;
@@ -59,7 +60,7 @@ export class DataService {
   getServiceDetails($attraction: string, $service: string, $type: string){
     console.log("Attraction:", $attraction, "services:", $service, "Type:", $type);
     return this.httpClient.get
-    (`${this.baseUrl}timAdventures.php?class=timAdventures&method=getServiceDetails&attraction="${$attraction}"&service=${$service}&type=${$type}`).pipe(
+    (`${this.baseUrl}timadventures.php?class=timAdventures&method=getServiceDetails&attraction="${$attraction}"&service=${$service}&type=${$type}`).pipe(
       map((res: any) => {
         return res;
         //console.log("servicesdata: ", res);
