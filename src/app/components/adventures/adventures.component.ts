@@ -9,6 +9,7 @@ import { toursparams } from 'src/tour';
   styleUrls: ['./adventures.component.css']
 })
 export class AdventuresComponent implements OnInit {
+  //Array of data to be displayed on the cards
   cards = [
     {
       title: 'Card Title 1',
