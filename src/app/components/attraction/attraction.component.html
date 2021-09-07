@@ -1,4 +1,36 @@
-<div style="padding: 13px;" class="cards">
+
+    <div class="row">
+     
+        <div class="col-md-6" *ngFor="let attraction of attractions">
+           
+  
+                  <div class=" card card-main shadow-lg p-3 mb-5 h-100">
+                      <div class=" card-top individual-color  h-100">
+                          <h1>{{attraction.name}}</h1>
+                          <img class="img-icon" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap"> 
+                        
+                      </div>
+                      <div class="card-bottom  h-100">
+  
+                          <h2>More About <span class="text-primary"> {{attraction.name}} </span> </h2> 
+                          {{attraction.description}} <br/>
+                          <br/><br/>
+                              <button type="button" 
+                              class="btn btn-select text-uppercase" 
+                              (click)="getServices(attraction.attraction)" > 
+                              Find Services
+                            </button>
+                       
+                      </div>
+                      
+                  </div>
+                </div>
+              
+            </div>
+
+
+
+<!-- <div style="padding: 13px;" class="cards">
     <mat-spinner *ngIf="attractions.length === 0"></mat-spinner>
 
     <mat-card *ngFor="let attraction of attractions">
@@ -16,4 +48,4 @@
       <button mat-button (click)="getServices(attraction.attraction)"> Find Services </button>
     </mat-card-actions>
     </mat-card>
-</div>
+</div> -->

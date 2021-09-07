@@ -28,6 +28,7 @@ import { PlannedComponent } from './components/planned/planned.component';
 import { PlanningService } from './data.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { OurServicesComponent } from './components/our-services/our-services.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     PromosComponent,
     ServicesComponent,
     PlannedComponent,
+    OurServicesComponent,
   ],
   imports: [
     BrowserModule,

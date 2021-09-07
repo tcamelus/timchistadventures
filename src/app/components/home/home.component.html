@@ -1,88 +1,87 @@
+<div class="card carousel">
+  <div class="card-body">
+    <div class="welcome">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-<article>
-    <div>
-        <div class="welcome">
-            <H1>Welcome to TimChist Adventures</H1>
-            <p class="mt-3" >
-                TimChist Adventures is a privately owned tourism business registered in 
-                Kenya in 2017. <br/>At TimChist we make travel easy and tours memorable.
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+      
+          <div class="item active">
+            <img src="../../../assets/img/logo.png"  alt="Welcome">
+            <div class="carousel-caption">
+              <h3>Welcome to TimChist Adventures!</h3>
+              <p class="mt-3" >
+                A privately owned tourism business registered in Kenya in the year 2017 to make travel easy and tours memorable.
             </p>
-        </div>
-        <div >
-            <p class="mt-3">
-                We not only offer planned tour experiences, we also allow you to customize
-                your own travel by exposing and informing you about different travel experiences
-                and services being offered in different destinations around the country.<br/>
-                Our service offers include:
+              <p class mt-3> We offer planned tour experiences, as well as customized
+                travel adventures by exposing and informing you about different travel activities
+                and services being offered in different destinations around the country.
             </p>
-        </div>
-        <div>
-            <div class="serviceItems">
-                <ul ngbNav #nav="ngbNav" class="nav-tabs">
-                    <li ngbNavItem>
-                        <a ngbNavLink>Personalized Experiences</a>
-                        <ng-template ngbNavContent height="50%">
-                            <img height="25%" width="25%" src="../../../assets/img/logo.png" alt="">
-                            <p>
-                                Kenya has a broad-range of destinations with different tour 
-                                experiences and activities. We know of quite the number and 
-                                want you to experience Kenya in your own terms, budget, and
-                                preference. Ours is to make touring and traveling around Kenya 
-                                easy for both individuals and businesses alike. Find yourself a 
-                                <button routerLink="destinations">Destinations</button> and proceed with planning your trip. 
-                            </p>
-                        </ng-template>
-                    </li>
-                    <li ngbNavItem>
-                        <a ngbNavLink>Events/Conferences</a>
-                        <ng-template ngbNavContent>
-                            <img height="25%" width="25%" src="../../../assets/img/logo.png" alt="">
-                            <p>
-                                One of the growing businesses in Kenya today is events and 
-                                conferencing where business people, activists, and planners 
-                                meet not only in the main city of Nairobi but in other 
-                                destinations around the country. We provide events and 
-                                conferencing solutions, accommodations, transport and just
-                                being there incase you want to be show around and experience 
-                                your destination beyond the event or conference. 
-                                <button>View Upcoming Events</button> or <button>Plan Your Event</button>
-                            </p>
-                        </ng-template>
-                    </li>
-                    <li ngbNavItem>
-                        <a ngbNavLink>Adventures/Safaris</a>
-                        <ng-template ngbNavContent>
-                            <img height="25%" width="25%" src="../../../assets/img/logo.png" alt="">
-                            <p>
-                                We have uniquely 
-                                experienced this country and catalogued our experiences so 
-                                that you can also get to experience this country and its 
-                                uniqueness. Visit the Mara and see the 
-                                wildebeest migrate to and from Kenya, let us take you to the coast 
-                                or to the lake and experiences the sandy beaches and cool 
-                                breeze, or visit the Kenya deserts and have a desert tour right in 
-                                your country. There is literally an experience in Kenya for every 
-                                person and we know and have planned a significant number for you 
-                                to experience. Visit our <button routerLink="destinations">Adventures Cataloge</button> and choose and experience you 
-                                may desire.
-                            </p>
-                        </ng-template>
-                        </li>
-                        <li ngbNavItem>
-                        <a ngbNavLink>Car Hire</a>
-                        <ng-template ngbNavContent>Second content
-    
-                        </ng-template>
-                        </li>
-                        <li ngbNavItem>
-                        <a ngbNavLink>Book Flights</a>
-                        <ng-template ngbNavContent>Second content
-    
-                        </ng-template>
-                        </li>
-                    </ul>
-                    <div [ngbNavOutlet]="nav"></div>
+            <p>Let's plan your next vacation now: </p> <button type="button" class="btn btn-outline-info"> View Destinations </button> 
             </div>
-        </div>
-    </div>
-</article>
+          </div>
+      
+          <div class="item">
+            <img src="../../../assets/img/p5.jpg" alt="Our Services">
+            <div class="carousel-caption">
+              <h3>Our Services</h3>
+              <p>Some of the services we offer include:</p>
+              <ul>
+                <li> Personalized Travel Experiences </li>
+                <li> Events & Conference Halls </li>
+                <li>  Adventures/Safari Tours </li>
+                 <li> Book Flights </li>
+                <li> Car Hires</li>
+               
+              </ul>
+
+              <a href = "#our_services"><button type="button" class="btn btn-outline-info"> Read More </button> </a>
+          </div>
+          </div>
+      
+          <div class="item">
+            <img src="../../../assets/img/p5.jpg" alt="Destination">
+            <div class="carousel-caption">
+              <h3>Choose a Destination</h3>
+              <p>We love the Big Apple!</p>
+            </div>
+          </div>
+      
+          <div class="item">
+            <img src="../../../assets/img/p5.jpg" alt="Car Hire">
+            <div class="carousel-caption">
+              <h3>Hire a Car</h3>
+              <p>We love the Big Apple!</p>
+            </div>
+          </div>
+      
+          <div class="item">
+            <img src="../../../assets/img/p5.jpg" alt="Accommodations">
+            <div class="carousel-caption">
+              <h3>Book Your Accommodation</h3>
+              <p>We love the Big Apple!</p>
+            </div>
+          </div>
+      </div>
+      
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+  </div>
+
+
+  </div>
+</div>
+
+<div class="card section2">
+  <div class="card-body">
+    <app-our-services></app-our-services>
+  </div>
+
