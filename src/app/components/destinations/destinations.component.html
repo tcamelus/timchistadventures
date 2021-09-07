@@ -1,22 +1,29 @@
-<div>
-    <div style="padding: 13px;" class="cards">
-        <mat-spinner *ngIf="destinations.length === 0"></mat-spinner>
 
-        <mat-card *ngFor="let destination of destinations">
-            <mat-card-header>
-                <mat-card-title>{{destination.Name}}</mat-card-title>
-                <img style="height:50%; width: 50%;" src="../../../assets/img/logo.png" />
-                <mat-card-subtitle>{{destination.uid}}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-                <p>
-                    {{destination.description}}
-                </p>
-                
-            </mat-card-content>
-            <mat-card-actions>
-        <button mat-button (click)="getAtrractions(destination.destination)"> Visit </button>
-        </mat-card-actions>
-        </mat-card>
-    </div>
-</div>
+    <div class="row">
+     
+        <div class="col-md-6" *ngFor="let destination of destinations">
+           
+  
+                  <div class=" card card-main shadow-lg p-3 mb-5 h-100">
+                      <div class=" card-top individual-color  h-100">
+                          <h1>{{destination.name}}</h1>
+                          <img class="img-icon" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap"> 
+                        
+                      </div>
+                      <div class="card-bottom  h-100">
+  
+                          <h2>More About <span class="text-primary"> {{destination.name}} </span> </h2> 
+                          {{destination.description}} <br/>
+                          <br/><br/>
+                              <button type="button" 
+                              class="btn btn-select text-uppercase" 
+                              (click)="getAtrractions(destination.destination)" > 
+                              Visit
+                            </button>
+                       
+                      </div>
+                      
+                  </div>
+                </div>
+              
+            </div>

@@ -1,0 +1,27 @@
+h1{
+    font-size: 2m;
+    font-weight: bold;
+}
+h3{
+    font-size: 2em;
+}
+
+.btn-link {
+
+    font-size: 1.2em;
+}
+
+.icon{
+    padding-right: 2%;
+
+}
+
+.justify-text{
+    text-align: justify;
+}
+
+.material-icons{
+    font-size: 6em;
+    
+
+}

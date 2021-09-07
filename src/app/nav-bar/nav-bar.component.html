@@ -26,15 +26,22 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <img [ngClass]="{hidden: (isHandset$ | async)}" src="../../assets/img/logo.png"/>
-      <span class="spacer">TimChist Adventures</span>
-      <menu-main [ngClass]="{hidden: (isHandset$ | async)}">
+      <img [ngClass]="{hidden: (isHandset$ | async)}" routerLink="/" src="../../assets/img/logo.png"/> 
+   
+      <span class="spacer" [ngClass]="{hidden: !(isHandset$ | async)}">TimChist Adventures</span>
+      <span class="spacer" > </span>
+
+      <menu-main [ngClass]="{hidden: (isHandset$ | async)}" >
         <a routerLink="about" routerLinkActive="active">About_Us</a>
         <a routerLink="adventures" routerLinkActive="active">Adventures</a>
         <a routerLink="destinations" routerLinkActive="active">Destinations</a>
         <a routerLink="car-hire" routerLinkActive="active">Car_Hire</a>
         <a routerLink="accomodations" routerLinkActive="active">Accomodations</a>
       </menu-main>
+      <form class="form-inline" [ngClass]="{hidden: (isHandset$ | async)}">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </mat-toolbar>
     <!-- Add Content Here -->
   </mat-sidenav-content>
