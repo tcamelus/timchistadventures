@@ -36,7 +36,6 @@ export class DestinationsComponent implements OnInit {
       // 
       this.destinations=(data);
       this.isLoading = false;
-      console.log("Destinations: ",this.destinations);
     });
   }
   //

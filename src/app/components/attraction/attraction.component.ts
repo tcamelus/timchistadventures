@@ -16,6 +16,7 @@ export class AttractionComponent implements OnInit {
   //
   //define the attraction array
   attractions: toursparams[]=[];
+  isLoading: boolean = true;
 
 
   constructor(
@@ -35,12 +36,13 @@ export class AttractionComponent implements OnInit {
   }
 
   getAttractionDetails(selectedRecordId: string){
+    this.isLoading = true;
     let destination = this.selectedRecordId
     this.dataService.getAttractions(destination).
     subscribe((data: toursparams [])=>{
       // 
       this.attractions=(data);
-      //console.log("Attractions: ",data);
+      this.isLoading = false;
     })
   }
   //Get attractions
