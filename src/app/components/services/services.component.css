@@ -10,6 +10,7 @@ a {
   text-decoration: none;
   text-transform: capitalize;
   font-size: 1em;
+  color: black;
 }
 
 .center-text {
@@ -22,4 +23,14 @@ a {
   color: white;
   margin-top: 5%;
   text-align: center;
+}
+
+.loader-class {
+  padding-left: 35%;
+}
+
+@media screen and (min-width: 200px) and (max-width: 850) {
+  .loader-class {
+    padding-left: 20%;
+  }
 }
