@@ -1,37 +1,38 @@
+<h1 class="center-text">Here Are Some Of Our Destinations</h1>
+<hr />
 
-    <div class="row" *ngIf = "isLoading === false">
-     
-        <div class="col-md-6" *ngFor="let destination of destinations">
-           
-  
-                  <div class=" card card-main shadow-lg p-3 mb-5 h-100">
-                      <div class=" card-top individual-color  h-100">
-                          <h1>{{destination.name}}</h1>
-                          <img  
-                          class="img-icon" 
-                          src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" 
-                          alt="Card image cap"> 
-                        
-                      </div>
-                      <div class="card-bottom  h-100">
-  
-                          <h2>More About <span class="text-primary"> {{destination.name}} </span> </h2> 
-                          {{destination.description}} <br/>
-                          <br/><br/>
-                              <button type="button" 
-                              class="btn btn-select text-uppercase" 
-                              (click)="getAtrractions(destination.destination)" > 
-                              Visit
-                            </button>
-                       
-                      </div>
-                      
-                  </div>
-                </div>
-              
-            </div>
+<div class="container-fluid">
+  <div class="row" *ngIf="isLoading === false">
+    <div class="col-md-6" *ngFor="let destination of destinations">
+      <div class="card card-main shadow-lg p-3 mb-5 h-100">
+        <div class="card-top individual-color h-100">
+          <h1>{{ destination.name }}</h1>
+          <img
+            class="img-icon"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
+            alt="Card image cap"
+          />
+        </div>
+        <div class="card-bottom h-100">
+          <h2>
+            More About
+            <span class="text-primary"> {{ destination.name }} </span>
+          </h2>
+          {{ destination.description }} <br />
+          <br /><br />
+          <button
+            type="button"
+            class="btn btn-select text-uppercase"
+            (click)="getAtrractions(destination.destination)"
+          >
+            Visit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-     <div *ngIf = " isLoading === true">
-         <div class="col-md-12 loader-class"> <app-loader></app-loader></div>
-         
-     </div>
+  <div *ngIf="isLoading === true">
+    <div class="col-md-12 loader-class"><app-loader></app-loader></div>
+  </div>
+</div>
