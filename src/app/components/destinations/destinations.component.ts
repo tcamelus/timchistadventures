@@ -1,5 +1,8 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 import { DataService } from 'src/app/data.service';
 import { toursparams } from 'src/tour';
 
@@ -17,7 +20,7 @@ export class DestinationsComponent implements OnInit {
   isLoading: boolean = true;
   //
   //create a new instance of dataservice from the imported data.service
-  constructor(private dataService: DataService, private router: Router) {
+  constructor(private dataService: DataService, private router: Router, private breakpointObserver: BreakpointObserver) {
       
    }
    //
@@ -41,4 +44,10 @@ export class DestinationsComponent implements OnInit {
   getAtrractions(destination: string) {
     this.router.navigate(['/attraction', destination]);
   }
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    shareReplay()
+  );
 }
