@@ -14,6 +14,7 @@ export class DestinationsComponent implements OnInit {
   //
   //define the destinations variable
   destinations: toursparams[]=[];
+  isLoading: boolean = true;
   //
   //create a new instance of dataservice from the imported data.service
   constructor(private dataService: DataService, private router: Router) {
@@ -26,11 +27,13 @@ export class DestinationsComponent implements OnInit {
     this.getDestinations();
   }
   getDestinations(): void{
+    this.isLoading = true;
     //
     this.dataService.getdestinations().subscribe((data: toursparams[])=>{
       // 
       this.destinations=(data);
-      console.log(this.destinations);
+      this.isLoading = false;
+      console.log("Destinations: ",this.destinations);
     });
   }
   //

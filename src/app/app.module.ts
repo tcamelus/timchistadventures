@@ -29,6 +29,7 @@ import { PlanningService } from './data.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { OurServicesComponent } from './components/our-services/our-services.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { OurServicesComponent } from './components/our-services/our-services.com
     ServicesComponent,
     PlannedComponent,
     OurServicesComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -45,6 +45,10 @@
 
 }
 
+.loader-class{
+    padding-left: 30%;
+}
+
 @media screen and (max-width : 320px){
     .card-container{
         margin-left: 1%;
