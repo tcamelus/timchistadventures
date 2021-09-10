@@ -52,8 +52,6 @@ ul{
     height: 75vh;
     width: 100vw;
     border-color: wheat;
-    border-style: solid;
-    overflow: scroll;
   }
 
   .services{
@@ -80,16 +78,16 @@ ul{
 .carousel-caption{
     background: rgba(0,0,0,0.7);
     top: 50%;
-transform: translateY(-50%);
+    transform: translateY(-50%);
     z-index: 1;
     bottom: initial;
 }
 
 .item{
     -webkit-transform-style: preserve-3d;
--moz-transform-style: preserve-3d;
-transform-style: preserve-3d;
-font-size: 1.3em;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    font-size: 1.3em;
 }
 
 h1{

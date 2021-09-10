@@ -4,13 +4,10 @@
     border: none;
 
 }
-
-
 .individual-color{
     background: rgba(108, 99, 255, 0.1);
 
 }
-
 .card-top{
     width: 100%;
     height: 35%;
@@ -19,7 +16,6 @@
     border: none;
 
 }
-
 .card-bottom{
     width: 100%;
     height: 35%;
@@ -27,8 +23,6 @@
     border-radius: 0px 60px 60px 60px;
     border: none;
 }
-
-
 .btn-select{
     padding: 5% 10% 5% 10%;
     background: #F69322;
@@ -37,31 +31,25 @@
     bottom: 2%;
     left: 35%;
 }
-
 h1{
     font-size: 2em;
     font-weight: bold;
     height: auto;
     text-align: center;
 }
-
-
 h3{
     font-size: 1em;
     font-weight: bold;
     height: auto;
     text-align: center;
 }
-
 .img-icon{
     padding: 5%;
     width: 100%;
 
 }
-
 @media screen and (max-width : 320px){
     .card-container{
         margin-left: 1%;
     }
-
 }
