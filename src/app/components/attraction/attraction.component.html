@@ -1,51 +1,37 @@
+<h1 class="center-text">Attractions For Your Selected Destination</h1>
+<hr />
 
-    <div class="row">
-     
-        <div class="col-md-6" *ngFor="let attraction of attractions">
-           
-  
-                  <div class=" card card-main shadow-lg p-3 mb-5 h-100">
-                      <div class=" card-top individual-color  h-100">
-                          <h1>{{attraction.name}}</h1>
-                          <img class="img-icon" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap"> 
-                        
-                      </div>
-                      <div class="card-bottom  h-100">
-  
-                          <h2>More About <span class="text-primary"> {{attraction.name}} </span> </h2> 
-                          {{attraction.description}} <br/>
-                          <br/><br/>
-                              <button type="button" 
-                              class="btn btn-select text-uppercase" 
-                              (click)="getServices(attraction.attraction)" > 
-                              Find Services
-                            </button>
-                       
-                      </div>
-                      
-                  </div>
-                </div>
-              
-            </div>
+<div class="container-fluid">
+  <div class="row" *ngIf="isLoading === false">
+    <div class="col-md-6" *ngFor="let attraction of attractions">
+      <div class="card card-main shadow-lg p-3 mb-5 h-100">
+        <div class="card-top individual-color h-100">
+          <h1>{{ attraction.name }}</h1>
+          <img
+            class="img-icon"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
+            alt="Card image cap"
+          />
+        </div>
+        <div class="card-bottom h-100">
+          <h2>
+            More About <span class="text-primary"> {{ attraction.name }} </span>
+          </h2>
+          {{ attraction.description }} <br />
+          <br /><br />
+          <button
+            type="button"
+            class="btn btn-select text-uppercase"
+            (click)="getServices(attraction.attraction)"
+          >
+            Find Services
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-
-<!-- <div style="padding: 13px;" class="cards">
-    <mat-spinner *ngIf="attractions.length === 0"></mat-spinner>
-
-    <mat-card *ngFor="let attraction of attractions">
-        <mat-card-header>
-            <mat-card-title>{{attraction.name}}</mat-card-title>
-            <img style="height:50%; width: 50%;" src="../../../assets/img/logo.png" />
-        </mat-card-header>
-        <mat-card-content>
-            <p>
-                {{attraction.description}}
-            </p>
-            
-        </mat-card-content>
-        <mat-card-actions>
-      <button mat-button (click)="getServices(attraction.attraction)"> Find Services </button>
-    </mat-card-actions>
-    </mat-card>
-</div> -->
+  <div *ngIf="isLoading === true">
+    <div class="col-md-12 loader-class"><app-loader></app-loader></div>
+  </div>
+</div>

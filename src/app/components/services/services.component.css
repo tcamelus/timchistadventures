@@ -1,7 +1,36 @@
-article{
-    width: 65vw;
+article {
+  width: 65vw;
 }
-.atservice{
-    font-size: 2em;
-    color: black;
+.atservice {
+  font-size: 2em;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 1em;
+  color: black;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.btn-select {
+  padding: 2% 20% 2% 20%;
+  background: #f69322;
+  color: white;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.loader-class {
+  padding-left: 35%;
+}
+
+@media screen and (min-width: 200px) and (max-width: 850) {
+  .loader-class {
+    padding-left: 20%;
+  }
 }

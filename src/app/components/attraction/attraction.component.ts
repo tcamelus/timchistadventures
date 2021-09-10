@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-attraction',
   templateUrl: './attraction.component.html',
-  styleUrls: ['./attraction.component.css']
+  styleUrls: ['./attraction.component.css'],
 })
 export class AttractionComponent implements OnInit {
   //
@@ -15,15 +15,14 @@ export class AttractionComponent implements OnInit {
   selectedRecordId!: string;
   //
   //define the attraction array
-  attractions: toursparams[]=[];
-
+  attractions: toursparams[] = [];
+  isLoading: boolean = true;
 
   constructor(
     private dataService: DataService,
     private activeRoute: ActivatedRoute,
     private router: Router
-  ) 
-  {
+  ) {
     this.activeRoute.params.subscribe((p) => {
       this.selectedRecordId = p['destination'];
       this.getAttractionDetails(this.selectedRecordId);
@@ -34,14 +33,16 @@ export class AttractionComponent implements OnInit {
     this.getAttractionDetails(this.selectedRecordId);
   }
 
-  getAttractionDetails(selectedRecordId: string){
-    let destination = this.selectedRecordId
-    this.dataService.getAttractions(destination).
-    subscribe((data: toursparams [])=>{
-      // 
-      this.attractions=(data);
-      //console.log("Attractions: ",data);
-    })
+  getAttractionDetails(selectedRecordId: string) {
+    this.isLoading = true;
+    let destination = this.selectedRecordId;
+    this.dataService
+      .getAttractions(destination)
+      .subscribe((data: toursparams[]) => {
+        //
+        this.attractions = data;
+        this.isLoading = false;
+      });
   }
   //Get attractions
   getServices(attraction: string) {

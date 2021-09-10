@@ -2,7 +2,7 @@
 <app-nav-bar></app-nav-bar>
 <div class="content row">
         <div class="col-md-3" >
-            <client-dboard ></client-dboard>
+            <client-dboard  [ngClass]="{foot: (isHandset$ | async)}" ></client-dboard>
             <promos [ngClass]="{foot: (isHandset$ | async)}" class="section"></promos>
         </div>
         <div class="col-md-9">
