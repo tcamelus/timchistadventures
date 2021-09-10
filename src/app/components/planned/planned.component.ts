@@ -68,22 +68,22 @@ export class PlannedComponent implements OnInit {
   }
   //
   bookTrip(evt: Event){
-    const el= <HTMLButtonElement>evt.target;
-    if (el===null){
-      throw new Error("element not found");
-    }
-    //
-    //Get the tr parent 
-    const tr =<HTMLTableRowElement>el.parentElement?.parentElement;
-    //
-    //Get the info you are looking for 
-    const date = tr.cells[0].textContent;
-    console.log(date);
-    //
-    //Get the tr above 
-    const tr_above= <HTMLTableRowElement>(<HTMLTableSectionElement>tr.parentElement!).rows[tr.rowIndex-1]
-    //this.plannedServices = this.bkservices.push(this.fromDate, this.toDate);
-    // console.log(this.plannedServices);
+    // const el= <HTMLButtonElement>evt.target;
+    // if (el===null){
+    //   throw new Error("element not found");
+    // }
+    // //
+    // //Get the tr parent 
+    // const tr =<HTMLTableRowElement>el.parentElement?.parentElement;
+    // //
+    // //Get the info you are looking for 
+    // const date = tr.cells[0].textContent;
+    // console.log(date);
+    // //
+    // //Get the tr above 
+    // const tr_above= <HTMLTableRowElement>(<HTMLTableSectionElement>tr.parentElement!).rows[tr.rowIndex-1]
+    // //this.plannedServices = this.bkservices.push(this.fromDate, this.toDate);
+    // // console.log(this.plannedServices);
   }
   onDateSelection(date: NgbDate) {
     if (!this.fromDate && !this.toDate) {
