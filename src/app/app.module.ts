@@ -10,9 +10,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import{MatCardModule} from '@angular/material/card';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,16 +20,18 @@ import { AttractionComponent } from './components/attraction/attraction.componen
 import { ClientDboardComponent } from './components/client-dboard/client-dboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AvatarModule } from 'ngx-avatar';
 import { PromosComponent } from './components/promos/promos.component';
 import { ServicesComponent } from './components/services/services.component';
 import { PlannedComponent } from './components/planned/planned.component';
 import { PlanningService } from './data.service';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { OurServicesComponent } from './components/our-services/our-services.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     PlannedComponent,
     OurServicesComponent,
     LoaderComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,11 +68,11 @@ import { LoaderComponent } from './components/loader/loader.component';
     FlexLayoutModule,
     AvatarModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [PlanningService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-  
- }
+export class AppModule {}
