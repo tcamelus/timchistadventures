@@ -32,7 +32,6 @@ export class DestinationsComponent implements OnInit {
       //
       this.destinations = data;
       this.isLoading = false;
-      console.log('Destinations: ', this.destinations);
     });
   }
   //
@@ -41,7 +40,6 @@ export class DestinationsComponent implements OnInit {
     this.isShowing = true;
 
     let selected = { destination, name };
-    console.log('id', selected);
 
     sessionStorage.setItem('selectedDestination', JSON.stringify(selected));
   }

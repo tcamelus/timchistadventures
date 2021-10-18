@@ -18,6 +18,7 @@ export class AttractionComponent implements OnInit {
   attractions: toursparams[] = [];
   isLoading: boolean = true;
   destID: any;
+  destName: any;
   destSelected: any;
 
   constructor(
@@ -37,8 +38,7 @@ export class AttractionComponent implements OnInit {
     let destinationId = JSON.parse(this.destSelected);
 
     this.destID = destinationId.destination;
-    console.log('dest', this.destSelected);
-    console.log('dest', destinationId.destination);
+    this.destName = destinationId.name;
     this.getAttractionDetails(this.destID);
   }
 
@@ -51,12 +51,11 @@ export class AttractionComponent implements OnInit {
         //
         this.attractions = data;
         this.isLoading = false;
-
-        console.log('attractions', this.attractions);
       });
   }
   //Get attractions
   getServices(attraction: string) {
-    this.router.navigate(['/services', attraction]);
+    console.log('serviceAttraction', attraction);
+    // this.router.navigate(['/services', attraction]);
   }
 }

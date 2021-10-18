@@ -23,12 +23,6 @@
   transform: translateY(-50%);
   bottom: initial;
 }
-
-.exp-img {
-  border-radius: 80px;
-  width: 50%;
-  height: 50%;
-}
 @font-face {
   font-family: "MervaleScript-Regular";
   src: local("MervaleScript-Regular"),

@@ -1,4 +1,97 @@
-<h1 class="center-text">Attractions For Your Selected Destination</h1>
+<div class="container">
+  <div class="text-center">
+    <h2 class="section-heading text-info">{{ destName }} Attractions</h2>
+    <h3 class="section-subheading text-muted">
+      Lorem ipsum dolor sit amet consectetur.
+    </h3>
+  </div>
+  <div *ngIf="isLoading === false">
+    <div *ngFor="let attraction of attractions">
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <!-- Portfolio items-->
+        <div class="portfolio-item">
+          <a
+            class="portfolio-link"
+            data-toggle="modal"
+            data-target="#portfolioModal"
+          >
+            <div
+              class="portfolio-hover"
+              (click)="getServices(attraction.attraction)"
+            >
+              <div class="portfolio-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+          </a>
+          <div class="portfolio-caption">
+            <div class="portfolio-caption-heading text-warning">
+              {{ attraction?.name }}
+            </div>
+            <div class="portfolio-caption-subheading text-muted">
+              {{ attraction?.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- pup up modal -->
+<!-- <div
+  class="portfolio-modal modal"
+  id="portfolioModal"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+  *ngIf="isShowing == true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <img src="assets/img/close-icon.svg" alt="Close modal" />
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="modal-body">
+              <app-attraction
+                routerLink="/attraction/{{ attractionsContent }}"
+              ></app-attraction>
+              <ul class="list-inline">
+                <li>
+                  <strong>Client:</strong>
+                  Threads
+                </li>
+                <li>
+                  <strong>Category:</strong>
+                  Illustration
+                </li>
+              </ul>
+              <button
+                class="btn btn-primary btn-xl text-uppercase"
+                data-dismiss="modal"
+                type="button"
+              >
+                <i class="fas fa-times me-1"></i>
+                Close Project
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Loader component -->
+<div *ngIf="isLoading === true">
+  <div class="col-md-12 loader-class"><app-loader></app-loader></div>
+</div>
+
+<!-- <h1 class="center-text">Attractions For Your Selected Destination</h1>
 <hr />
 
 <div class="container-fluid">
@@ -34,4 +127,4 @@
   <div *ngIf="isLoading === true">
     <div class="col-md-12 loader-class"><app-loader></app-loader></div>
   </div>
-</div>
+</div> -->

@@ -9,27 +9,29 @@ import { AttractionComponent } from './components/attraction/attraction.componen
 import { HomeComponent } from './components/home/home.component';
 import { ServicesComponent } from './components/services/services.component';
 import { PlannedComponent } from './components/planned/planned.component';
+import { OurServicesComponent } from './components/our-services/our-services.component';
 
 const routes: Routes = [
-  {path:"", component:HomeComponent},
-  {path:"home", component:HomeComponent},
-  {path:"about", component:AboutComponent},
-  {path:"adventures", component:AdventuresComponent},
-  {path:"destinations", component:DestinationsComponent},
-  {path:"car-hire", component:CarHireComponent},
-  {path:"accomodations", component:AccomodationsComponent}, 
-  {path: "planned", component:PlannedComponent}, 
-  {path:"attraction/:destination", component:AttractionComponent},
-  {path: "services/:attraction", component:ServicesComponent}
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'our-services', component: OurServicesComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'adventures', component: AdventuresComponent },
+  { path: 'destinations', component: DestinationsComponent },
+  { path: 'car-hire', component: CarHireComponent },
+  { path: 'accomodations', component: AccomodationsComponent },
+  { path: 'planned', component: PlannedComponent },
+  { path: 'attraction/:destination', component: AttractionComponent },
+  { path: 'services/:attraction', component: ServicesComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 export const routingComponents = [
-  AboutComponent, 
+  AboutComponent,
   AdventuresComponent,
   DestinationsComponent,
   CarHireComponent,
@@ -37,5 +39,5 @@ export const routingComponents = [
   AttractionComponent,
   HomeComponent,
   ServicesComponent,
-  PlannedComponent
- ]
+  PlannedComponent,
+];
