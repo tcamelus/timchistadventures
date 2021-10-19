@@ -30,6 +30,8 @@ export class ServicesComponent implements OnInit {
   attName: any;
   attID: any;
   attSelected: any;
+  selectedService: any;
+  isSelected: boolean = false;
 
   constructor(
     private dataService: DataService,
@@ -66,16 +68,20 @@ export class ServicesComponent implements OnInit {
       .subscribe((data: toursparams[]) => {
         //
         this.services = data;
+
+        console.log('services offered', this.services);
         this.isLoading = false;
       });
   }
   getServiceDetails($serviceID: string, $type: string) {
+    this.isSelected = true;
     //
 
     this.dataService
       .getServiceDetails(this.attID, $serviceID, $type)
       .subscribe((data: toursparams[]) => {
         //
+        this.selectedService = $type;
         this.atservices = data;
       });
   }

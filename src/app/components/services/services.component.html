@@ -1,116 +1,35 @@
-<!-- <h1 class="center-text">Services Available In This Attraction Include</h1>
-<hr />
-
-<div class="row" *ngIf="isLoading === false">
-  <div class="container-fluid" *ngFor="let service of services">
-    <div class="card">
-      <div class="card-body">
-        <div class="card-title">
-          <a
-            data-toggle="collapse"
-            href="#collapseExample"
-            role="button"
-            aria-expanded="false"
-            aria-controls="collapseExample"
-            (click)="getServiceDetails(service.services, service.name)"
-          >
-            {{ service.name }} service
-          </a>
-        </div>
-
-        <div class="card-body">
-          <div class="collapse" id="collapseExample">
-            <div
-              class="card card-body col-md-6 shadow-lg p-3 mb-5 h-100"
-              *ngFor="let atservice of atservices"
-            >
-              <div class="container-fluid">
-                <div class="row separate-cards">
-                  <div class="col-md-4">
-                    <img
-                      style="height: 70%; width: 70%"
-                      src="../../../assets/img/logo.png"
-                    />
-                  </div>
-                  <div class="col-md-8">
-                    <div class="row align-items-start">
-                      <div class="col">
-                        <span class="text-info">Description:</span>
-                        <p>{{ atservice.description }}</p>
-                      </div>
-                    </div>
-                    <div class="row align-items-start">
-                      <div class="col">
-                        <span class="text-info">Rate:</span>
-                        <p>{{ atservice.rate }}</p>
-                      </div>
-                    </div>
-                    <div class="row align-items-start">
-                      <div class="col">
-                        <span class="text-info">Destination:</span>
-                        <p>{{ atservice.destination }}</p>
-                      </div>
-                    </div>
-                    <div class="row align-items-start">
-                      <div class="col">
-                        <span class="text-info">Attraction:</span>
-                        <p>{{ atservice.attraction }}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  class="btn btn-select text-uppercase"
-                  (click)="addService(atservice)"
-                >
-                  Select Service
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="text-center">
+  <h2 class="section-heading text-uppercase">{{ attName }} Services</h2>
+  <h3 class="section-subheading text-muted">
+    Lorem ipsum dolor sit amet consectetur.
+  </h3>
 </div>
 
-<div *ngIf="isLoading === true">
-  <div class="col-md-12 loader-class"><app-loader></app-loader></div>
-</div> -->
-
-<div class="container">
+<div class="row">
   <div class="text-center">
-    <h2 class="section-heading text-uppercase">{{ attName }} Services</h2>
+    <h6 class="section-heading">All Services</h6>
     <h3 class="section-subheading text-muted">
       Lorem ipsum dolor sit amet consectetur.
     </h3>
   </div>
-  <div *ngIf="isLoading === false">
-    <div *ngFor="let service of services">
-      <div class="col-lg-4 col-sm-6 mb-4">
-        <!-- Portfolio items-->
-        <div class="portfolio-item">
-          <a
-            class="portfolio-link"
-            data-toggle="modal"
-            data-target="#portfolioModal"
+  <div *ngFor="let service of services">
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <!-- Portfolio items-->
+      <div class="portfolio-item">
+        <a class="portfolio-link">
+          <div
+            class="portfolio-hover"
+            (click)="getServiceDetails(service.services, service.name)"
           >
-            <div
-              class="portfolio-hover"
-              (click)="getServiceDetails(service.services, service.name)"
-            >
-              <div class="portfolio-hover-content">
-                <i class="fas fa-plus fa-3x"></i>
-              </div>
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
             </div>
-            <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
-          </a>
-          <div class="portfolio-caption">
-            <div class="portfolio-caption-heading">{{ service.name }}</div>
-            <!-- <div class="portfolio-caption-subheading text-muted">
-              {{ destination?.destination }}
-            </div> -->
+          </div>
+          <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+        </a>
+        <div class="portfolio-caption">
+          <div class="portfolio-caption-heading">
+            {{ service?.name }} Service
           </div>
         </div>
       </div>
@@ -118,69 +37,48 @@
   </div>
 </div>
 
-<!-- pup up modal -->
-<div
-  class="portfolio-modal modal"
-  id="portfolioModal"
-  tabindex="-1"
-  role="dialog"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <img src="assets/img/close-icon.svg" alt="Close modal" />
-      </div>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="modal-body">
-              <!-- Project details-->
-              <div *ngFor="let atservice of atservices">
-                <img
-                  class="img-fluid"
-                  src="assets/img/portfolio/1.jpg"
-                  alt="..."
-                />
-                {{ atservice.description }} <br />
-                Rate: {{ atservice.rate }}<br />
-                Destination: {{ atservice.destination }}<br />
-                Attraction: {{ atservice.attraction }}
-                <button
-                  type="button"
-                  class="btn btn-select text-uppercase"
-                  (click)="addService(atservice)"
-                >
-                  Select Service
-                </button>
-              </div>
-              <ul class="list-inline">
-                <li>
-                  <strong>Client:</strong>
-                  Threads
-                </li>
-                <li>
-                  <strong>Category:</strong>
-                  Illustration
-                </li>
-              </ul>
-              <button
-                class="btn btn-primary btn-xl text-uppercase"
-                data-dismiss="modal"
-                type="button"
-              >
-                <i class="fas fa-times me-1"></i>
-                Close Project
-              </button>
+<!-- Selected services details -->
+<div class="row" *ngIf="isSelected">
+  <div class="text-center">
+    <h6 class="section-heading">{{ selectedService }} Services</h6>
+    <h3 class="section-subheading text-muted">
+      Lorem ipsum dolor sit amet consectetur.
+    </h3>
+  </div>
+  <div class="row" *ngFor="let atservice of atservices">
+    <div class="col mb-4">
+      <!-- Portfolio items-->
+      <div class="portfolio-item">
+        <a class="portfolio-link">
+          <div class="portfolio-hover" (click)="addService(atservice)">
+            <div class="portfolio-hover-content">
+              <i class="fas fa-plus fa-3x"></i>
             </div>
           </div>
+          <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+        </a>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="portfolio-caption">
+        <div class="">{{ atservice.description }}</div>
+        <div class="row align-items-start">
+          <span class="text-info col">Rate:</span>
+          <p class="col">{{ atservice.rate }}</p>
+        </div>
+        <div class="row align-items-start">
+          <span class="text-info col">Destination:</span>
+          <p class="col">{{ atservice.destination }}</p>
+        </div>
+
+        <div class="row align-items-start">
+          <!-- <div class="col"> -->
+          <span class="text-info col">Attraction:</span>
+          <p class="col">{{ atservice.attraction }}</p>
+          <!-- </div> -->
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- Loader component -->
-<div *ngIf="isLoading === true">
-  <div class="col-md-12 loader-class"><app-loader></app-loader></div>
 </div>
