@@ -53,8 +53,6 @@ export class ServicesComponent implements OnInit {
     this.attID = destinationId.destination;
     this.attName = destinationId.name;
 
-    console.log(this.attID);
-
     this.getServices(this.attID);
     // this.getServiceDetails(this.serviceID, this.type);
   }

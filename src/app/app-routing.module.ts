@@ -25,10 +25,9 @@ const routes: Routes = [
       { path: 'accomodations', component: AccomodationsComponent },
       { path: 'planned', component: PlannedComponent },
       { path: 'attraction/:destination', component: AttractionComponent },
+      { path: 'services/:attraction', component: ServicesComponent },
     ],
   },
-
-  { path: 'services/:attraction', component: ServicesComponent },
 ];
 
 @NgModule({

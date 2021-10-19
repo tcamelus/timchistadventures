@@ -20,6 +20,7 @@ export class AttractionComponent implements OnInit {
   destID: any;
   destName: any;
   destSelected: any;
+  isShowing: boolean = false;
 
   constructor(
     private dataService: DataService,
@@ -55,6 +56,7 @@ export class AttractionComponent implements OnInit {
   }
   //Get attractions
   getServices(attraction: string, name: string) {
+    this.isShowing = true;
     let selectedAttraction = { attraction, name };
 
     sessionStorage.setItem(
