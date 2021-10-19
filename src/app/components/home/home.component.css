@@ -31,3 +31,8 @@
   src: local("sweet-purple"),
     url(../../../assets/fonts/QUIGLEYW.TTF) format("truetype");
 }
+
+.mast-img {
+  width: 1900px;
+  height: 1250px;
+}
