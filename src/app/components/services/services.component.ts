@@ -27,30 +27,42 @@ export class ServicesComponent implements OnInit {
   //
   //define the actual service in an attraction
   atservices: toursparams[] = [];
+  attName: any;
+  attID: any;
+  attSelected: any;
 
   constructor(
     private dataService: DataService,
     private activeRoute: ActivatedRoute,
     private plans: PlanningService
   ) {
-    this.activeRoute.params.subscribe((p) => {
-      this.selectedAttraction = p['attraction'];
-      this.getServices(this.selectedAttraction);
-      this.serviceID = p['service'];
-      this.type = p['type'];
-      this.getServiceDetails(this.serviceID, this.type);
-    });
+    // this.activeRoute.params.subscribe((p) => {
+    //   this.selectedAttraction = p['attraction'];
+    //   this.getServices(this.selectedAttraction);
+    //   this.serviceID = p['service'];
+    //   this.type = p['type'];
+    //   this.getServiceDetails(this.serviceID, this.type);
+    // });
   }
 
   ngOnInit(): void {
-    this.getServices(this.selectedAttraction);
-    this.getServiceDetails(this.serviceID, this.type);
+    this.attSelected = sessionStorage.getItem('selectedDestination');
+
+    let destinationId = JSON.parse(this.attSelected);
+
+    this.attID = destinationId.destination;
+    this.attName = destinationId.name;
+
+    console.log(this.attID);
+
+    this.getServices(this.attID);
+    // this.getServiceDetails(this.serviceID, this.type);
   }
   //
   //get the services from incoming data
-  getServices(selectedAttraction: string) {
+  getServices(attID: string) {
     this.isLoading = true;
-    let attraction = this.selectedAttraction;
+    let attraction = this.attID;
     this.dataService
       .getServices(attraction)
       .subscribe((data: toursparams[]) => {
@@ -63,7 +75,7 @@ export class ServicesComponent implements OnInit {
     //
 
     this.dataService
-      .getServiceDetails(this.selectedAttraction, $serviceID, $type)
+      .getServiceDetails(this.attID, $serviceID, $type)
       .subscribe((data: toursparams[]) => {
         //
         this.atservices = data;

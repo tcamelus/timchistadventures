@@ -54,8 +54,14 @@ export class AttractionComponent implements OnInit {
       });
   }
   //Get attractions
-  getServices(attraction: string) {
-    console.log('serviceAttraction', attraction);
-    // this.router.navigate(['/services', attraction]);
+  getServices(attraction: string, name: string) {
+    let selectedAttraction = { attraction, name };
+
+    sessionStorage.setItem(
+      'selectedAttraction',
+      JSON.stringify(selectedAttraction)
+    );
+
+    this.router.navigate(['/services', selectedAttraction.attraction]);
   }
 }

@@ -42,5 +42,7 @@ export class DestinationsComponent implements OnInit {
     let selected = { destination, name };
 
     sessionStorage.setItem('selectedDestination', JSON.stringify(selected));
+
+    this.router.navigate(['/attraction', selected.destination]);
   }
 }
