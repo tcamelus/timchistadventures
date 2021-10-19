@@ -12,16 +12,22 @@ import { PlannedComponent } from './components/planned/planned.component';
 import { OurServicesComponent } from './components/our-services/our-services.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'our-services', component: OurServicesComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'adventures', component: AdventuresComponent },
-  { path: 'destinations', component: DestinationsComponent },
-  { path: 'car-hire', component: CarHireComponent },
-  { path: 'accomodations', component: AccomodationsComponent },
-  { path: 'planned', component: PlannedComponent },
-  { path: 'attraction/:destination', component: AttractionComponent },
+  {
+    path: '',
+    component: HomeComponent,
+    children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'our-services', component: OurServicesComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'adventures', component: AdventuresComponent },
+      { path: 'destinations', component: DestinationsComponent },
+      { path: 'car-hire', component: CarHireComponent },
+      { path: 'accomodations', component: AccomodationsComponent },
+      { path: 'planned', component: PlannedComponent },
+      { path: 'attraction/:destination', component: AttractionComponent },
+    ],
+  },
+
   { path: 'services/:attraction', component: ServicesComponent },
 ];
 
