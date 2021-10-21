@@ -1,12 +1,13 @@
-<app-header [ngClass]="{hidden: (isHandset$ | async)}"></app-header>
+<!-- <app-header [ngClass]="{hidden: (isHandset$ | async)}"></app-header> -->
 <app-nav-bar></app-nav-bar>
-<div class="content row">
-        <div class="col-md-3" >
+<!-- <div class="content row"> -->
+<!-- <div class="col-md-3" >
             <client-dboard  [ngClass]="{foot: (isHandset$ | async)}" ></client-dboard>
             <promos [ngClass]="{foot: (isHandset$ | async)}" class="section"></promos>
-        </div>
-        <div class="col-md-9">
-            <router-outlet></router-outlet>
-        </div>
-</div>
-<app-footer [ngClass]="{foot: (isHandset$ | async)}"></app-footer>
+        </div> -->
+<!-- <div class="col-md-9"> -->
+<router-outlet></router-outlet>
+<!-- </div> -->
+<!-- </div> -->
+<!-- <app-footer [ngClass]="{foot: (isHandset$ | async)}"></app-footer> -->
+<app-footer></app-footer>

@@ -27,45 +27,61 @@ export class ServicesComponent implements OnInit {
   //
   //define the actual service in an attraction
   atservices: toursparams[] = [];
+  attName: any;
+  attID: any;
+  attSelected: any;
+  selectedService: any;
+  isSelected: boolean = false;
 
   constructor(
     private dataService: DataService,
     private activeRoute: ActivatedRoute,
     private plans: PlanningService
   ) {
-    this.activeRoute.params.subscribe((p) => {
-      this.selectedAttraction = p['attraction'];
-      this.getServices(this.selectedAttraction);
-      this.serviceID = p['service'];
-      this.type = p['type'];
-      this.getServiceDetails(this.serviceID, this.type);
-    });
+    // this.activeRoute.params.subscribe((p) => {
+    //   this.selectedAttraction = p['attraction'];
+    //   this.getServices(this.selectedAttraction);
+    //   this.serviceID = p['service'];
+    //   this.type = p['type'];
+    //   this.getServiceDetails(this.serviceID, this.type);
+    // });
   }
 
   ngOnInit(): void {
-    this.getServices(this.selectedAttraction);
-    this.getServiceDetails(this.serviceID, this.type);
+    this.attSelected = sessionStorage.getItem('selectedDestination');
+
+    let destinationId = JSON.parse(this.attSelected);
+
+    this.attID = destinationId.destination;
+    this.attName = destinationId.name;
+
+    this.getServices(this.attID);
+    // this.getServiceDetails(this.serviceID, this.type);
   }
   //
   //get the services from incoming data
-  getServices(selectedAttraction: string) {
+  getServices(attID: string) {
     this.isLoading = true;
-    let attraction = this.selectedAttraction;
+    let attraction = this.attID;
     this.dataService
       .getServices(attraction)
       .subscribe((data: toursparams[]) => {
         //
         this.services = data;
+
+        console.log('services offered', this.services);
         this.isLoading = false;
       });
   }
   getServiceDetails($serviceID: string, $type: string) {
+    this.isSelected = true;
     //
 
     this.dataService
-      .getServiceDetails(this.selectedAttraction, $serviceID, $type)
+      .getServiceDetails(this.attID, $serviceID, $type)
       .subscribe((data: toursparams[]) => {
         //
+        this.selectedService = $type;
         this.atservices = data;
       });
   }

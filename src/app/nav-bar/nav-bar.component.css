@@ -1,12 +1,15 @@
 @font-face {
   font-family: "MervaleScript-Regular";
-  src: local("MervaleScript-Regular"), url(../../../src/assets/fonts/MervaleScript-Regular.ttf) format("truetype");
+  src: local("MervaleScript-Regular"),
+    url(../../../src/assets/fonts/MervaleScript-Regular.ttf) format("truetype");
   font-size: "sweet-purple";
-  src: local("sweet-purple"), url(../../../src/assets/fonts/sweet-purple.ttf) format("truetype");
+  src: local("sweet-purple"),
+    url(../../../src/assets/fonts/sweet-purple.ttf) format("truetype");
   font-size: "QUIGLEYW";
-  src: local("QUIGLEYW"), url(../../../src/assets/fonts/QUIGLEYW.TTF) format("truetype");
+  src: local("QUIGLEYW"),
+    url(../../../src/assets/fonts/QUIGLEYW.TTF) format("truetype");
 }
-.spacer{
+.spacer {
   width: 50vh;
   font-family: "QUIGLEYW";
 }
@@ -31,45 +34,39 @@
   top: 0;
   z-index: 1;
 }
-main-menu .a .active{
+main-menu .a .active {
   color: aqua;
 }
-.hidden{
+.hidden {
   display: none;
 }
-.spacer{
+.spacer {
   flex: 1 1 auto;
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-.mat-toolbar a{
+.mat-toolbar a {
   display: inline-block;
   margin: 50px 10px 30px 10px;
   color: black;
   text-decoration: transparent;
   font-size: 16px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-mat-toolbar a:hover{
+mat-toolbar a:hover {
   color: blue;
 }
-.mat-toolbar img{
+.mat-toolbar img {
   height: 200%;
   width: 15%;
   margin-top: 3%;
 }
-.form-inline{
+.form-inline {
   margin-left: 100px;
 }
 
-.spacer-menu{
+.spacer-menu {
   align-items: right;
 }
-/*Media querry to hide side nav on big screens
-@media (min-width: 768px) {
-  .sidenav {
-    display: none;
-  }
-}
-*/

@@ -14,6 +14,8 @@ export class DestinationsComponent implements OnInit {
   //define the destinations variable
   destinations: toursparams[] = [];
   isLoading: boolean = true;
+  isShowing: boolean = false;
+  attractionsContent: any;
   //
   //create a new instance of dataservice from the imported data.service
   constructor(private dataService: DataService, private router: Router) {}
@@ -30,12 +32,17 @@ export class DestinationsComponent implements OnInit {
       //
       this.destinations = data;
       this.isLoading = false;
-      console.log('Destinations: ', this.destinations);
     });
   }
   //
   //Get attractions
-  getAtrractions(destination: string) {
-    this.router.navigate(['/attraction', destination]);
+  getAtrractions(destination: string, name: string) {
+    this.isShowing = true;
+
+    let selected = { destination, name };
+
+    sessionStorage.setItem('selectedDestination', JSON.stringify(selected));
+
+    this.router.navigate(['/attraction', selected.destination]);
   }
 }

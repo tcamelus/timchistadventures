@@ -1,48 +1,53 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav 
-      #drawer 
-      class="sidenav"
-      [ngClass]="{hidden: !(isHandset$ | async)}" 
-      fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/about" routerLinkActive="active">About_Us</a>
-      <a mat-list-item routerLink="/adventures" routerLinkActive="active">Adventures</a>
-      <a mat-list-item routerLink="/destinations" routerLinkActive="active">Destinations</a>
-      <a mat-list-item routerLink="/car-hire" routerLinkActive="active">Car_Hire</a>
-      <a mat-list-item routerLink="/accomodations" routerLinkActive="active">Accomodations</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar>
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <img [ngClass]="{hidden: (isHandset$ | async)}" routerLink="/" src="../../assets/img/logo.png"/> 
-   
-      <span class="spacer" [ngClass]="{hidden: !(isHandset$ | async)}">TimChist Adventures</span>
-      <span class="spacer" > </span>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#page-top"
+      ><img src="assets/img/navbar-logo.svg" alt="..."
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      Menu
+      <i class="fas fa-bars ms-1"></i>
+    </button>
 
-      <menu-main [ngClass]="{hidden: (isHandset$ | async)}" >
-        <a routerLink="about" routerLinkActive="active">About_Us</a>
-        <a routerLink="adventures" routerLinkActive="active">Adventures</a>
-        <a routerLink="destinations" routerLinkActive="active">Destinations</a>
-        <a routerLink="car-hire" routerLinkActive="active">Car_Hire</a>
-        <a routerLink="accomodations" routerLinkActive="active">Accomodations</a>
-      </menu-main>
-      <form class="form-inline" [ngClass]="{hidden: (isHandset$ | async)}">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#adventures">Adventures</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#portfolio">Destinations</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+        <li>
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+            <button type="button" class="btn btn-outline-primary">
+              search
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
