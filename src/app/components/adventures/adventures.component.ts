@@ -64,5 +64,6 @@ export class AdventuresComponent implements OnInit {
 
   getServiceDetails(selectedRecordId: string) {
     let selectedAttraction = this.selectedRecordId;
+    console.log(selectedAttraction);
   }
 }
