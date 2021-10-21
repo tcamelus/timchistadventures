@@ -12258,7 +12258,7 @@ font-size: 11px;
 height: 20px;
 }
 .card{
-    overflow: scroll;
+    background-color: azure;
 }
 .hidden{
     display: none;
